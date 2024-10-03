@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão de Ingressos</title>
+    <link rel="stylesheet" type="text/css" href="./src/styles.css">
+    <link rel="icon" href="./src/assets/logo.svg" type="image/x-icon">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="background-img">
+        <div class="ticket-section">
+            <form id="ticket-form">
+                <h2>Sistema de Gestão de Ingressos</h2>
+                <input type="text" id="name" placeholder="Nome" required><br>
+                <input type="text" id="seat" placeholder="Número do Assento" required><br>
+                <input type="date" id="date" required><br>
+                <input type="text" id="from" placeholder="Local de Origem" required><br>
+                <input type="text" id="to" placeholder="Local de Destino" required><br>
+                <input type="submit" value="Reservar Ingresso">
+            </form>
+            <button id="view-history-btn">Ver Histórico</button>
+        </div>
+    </div>
+    <div id="ticket-history">
+        <h3>Histórico de Ingressos</h3>
+        <table id="history-table">
+            <thead>
+                <tr>
+                    <th>ID do Ingresso</th>
+                    <th>Nome</th>
+                    <th>Número do Assento</th>
+                    <th>Data</th>
+                    <th>Local de Origem</th>
+                    <th>Local de Destino</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="history-table-body">
+                <!-- As linhas do histórico serão inseridas aqui -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="./src/script.js" defer data-deferred="1"></script>
+</body>
+</html>

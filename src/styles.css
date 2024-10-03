@@ -1,0 +1,168 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    padding: 10px;
+    background-image: url('../src/assets/wave-haikei.svg');
+    background-size: cover; /* ou use contain */
+    background-position: center;
+    background-repeat: no-repeat; /* Adicionado para evitar repetição */
+    min-height: 100vh; /* Garante que ocupe pelo menos a altura da tela */
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+
+.background-img {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 450px;
+    margin: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.ticket-section {
+    width: 100%;
+}
+
+input[type="text"], input[type="date"], input[type="submit"], #view-history-btn {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    padding: 12px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+#ticket-history {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    width: calc(100% - 40px);
+}
+
+#ticket-history.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#history-table th, #history-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+#history-table th {
+    background-color: #f9f9f9;
+    text-align: left;
+    font-weight: bold;
+}
+
+#history-table td {
+    text-align: center;
+}
+
+#history-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+#view-history-btn {
+    background-color: #0066ff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    padding: 12px;
+}
+
+#view-history-btn:hover {
+    background-color: #0066ff;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .background-img {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    #ticket-history {
+        margin-top: 20px;
+        width: 90%;
+        box-shadow: none;
+    }
+
+    input[type="text"], input[type="date"], input[type="submit"], #view-history-btn {
+        width: calc(100% - 15px);
+        padding: 10px;
+    }
+}
