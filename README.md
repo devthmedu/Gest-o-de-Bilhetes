@@ -1,5 +1,6 @@
 
 # Sistema de Gestão de Bilhetes
+![Sistema de Gestão de Bilhetes](https://github.com/user-attachments/assets/4e21c2a4-1563-4590-ba16-6f0d7277911d)
 
 ## Introdução
 
